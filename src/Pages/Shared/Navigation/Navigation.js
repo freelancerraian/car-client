@@ -38,30 +38,39 @@ const Navigation = () => {
                   </li>
                   <li className="nav-item cus-style">
                     <NavLink className="nav-link" to="/products">
-                      Cars 
+                      Cars
                     </NavLink>
                   </li>
                 </ul>
                 <div>
-                  {
-                    user?.email ? (
-                      <Box>
-                        <NavLink
-                          style={{ textDecoration: "none", color: "white" }}
-                          to="/dashboard"
+                  {user?.email ? (
+                    <Box>
+                      <NavLink
+                        style={{ textDecoration: "none", color: "white" }}
+                        to="/dashboard"
+                      >
+                        <Button
+                          variant="outlined"
+                          size="medium"
+                          style={{marginRight:"3px"}}
                         >
-                          <Button>Dashboard</Button>
-                        </NavLink>
-                        <Button onClick={logout} color="inherit">
-                          Logout
+                          Dashboard
                         </Button>
-                      </Box>
-                    ) : (
-                      <NavLink style={{ textDecoration: "none", color: "white" }} to="/login">
-                        <Button color="inherit" variant="contained">Login</Button>
                       </NavLink>
-                    )
-                  }
+                      <Button onClick={logout} variant="outlined" size="medium">
+                        Logout
+                      </Button>
+                    </Box>
+                  ) : (
+                    <NavLink
+                      style={{ textDecoration: "none", color: "white" }}
+                      to="/login"
+                    >
+                      <Button variant="outlined" size="medium">
+                        Login
+                      </Button>
+                    </NavLink>
+                  )}
                 </div>
               </div>
             </div>

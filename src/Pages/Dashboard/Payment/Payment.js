@@ -1,12 +1,11 @@
 import React from 'react';
 import './Payment.css';
+import comming_soon from "../../../images/coming-soon.jpg";
 
 const Payment = () => {
     return (
         <div>
-            <div className="bag-img">
-                <h1>Coming soon</h1>
-            </div>
+            <img style={{width:"100%", height: "100%"}} src={comming_soon} alt="" />
         </div>
     );
 };

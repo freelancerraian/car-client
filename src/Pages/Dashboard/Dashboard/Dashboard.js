@@ -48,7 +48,7 @@ const drawerWidth = 300;
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { admin } = useAuth();
+  const { admin, logout } = useAuth();
 
   let {path, url} = useRouteMatch();
   const handleDrawerToggle = () => {
@@ -67,8 +67,8 @@ function Dashboard(props) {
         }}
       >
         <Typography>
-          <Link to="/">
-            <Button color="inherit">
+          <Link style={{ textDecoration: "none" }} to="/">
+            <Button variant="outlined" size="medium">
               <HomeIcon color="secondary" />
               Home
             </Button>
@@ -84,16 +84,22 @@ function Dashboard(props) {
           }}
         >
           <Typography>
-            <Link to={`${url}/myorders`}>
-              <Button color="inherit">My Orders</Button>
+            <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
+              <Button variant="outlined" size="medium">
+                My Orders
+              </Button>
             </Link>
             <br />
-            <Link to={`${url}/review`}>
-              <Button color="inherit">Review</Button>
+            <Link style={{ textDecoration: "none" }} to={`${url}/review`}>
+              <Button variant="outlined" size="medium">
+                Review
+              </Button>
             </Link>
             <br />
-            <Link to={`${url}/pay`}>
-              <Button color="inherit">Payment</Button>
+            <Link style={{ textDecoration: "none" }} to={`${url}/pay`}>
+              <Button variant="outlined" size="medium">
+                Payment
+              </Button>
             </Link>
           </Typography>
         </Box>
@@ -107,24 +113,51 @@ function Dashboard(props) {
           }}
         >
           <Typography>
-            <Link to={`${url}/makeAdmin`}>
-              <Button color="inherit">Make Admin</Button>
+            <Link style={{ textDecoration: "none" }} to={`${url}/makeAdmin`}>
+              <Button variant="outlined" size="medium">
+                Make Admin
+              </Button>
             </Link>
             <br />
-            <Link to={`${url}/addproduct`}>
-              <Button color="inherit">Add Product</Button>
+            <Link style={{ textDecoration: "none" }} to={`${url}/addproduct`}>
+              <Button variant="outlined" size="medium">
+                Add Product
+              </Button>
             </Link>
             <br />
-            <Link to={`${url}/manageproducts`}>
-              <Button color="inherit">Manage Products</Button>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`${url}/manageproducts`}
+            >
+              <Button variant="outlined" size="medium">
+                Manage Products
+              </Button>
             </Link>
             <br />
-            <Link to={`${url}/manageallorders`}>
-              <Button color="inherit">Manage AllOrders</Button>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`${url}/manageallorders`}
+            >
+              <Button variant="outlined" size="medium">
+                <i class="fas fa-shopping-cart "></i>
+                Manage AllOrders
+              </Button>
             </Link>
+            <br />
           </Typography>
         </Box>
       )}
+      <Typography
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Button onClick={logout} variant="outlined" size="medium">
+          Logout
+        </Button>
+      </Typography>
       {/* <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>

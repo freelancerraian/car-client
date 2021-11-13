@@ -1,4 +1,5 @@
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import Button from "@restart/ui/esm/Button";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -44,9 +45,9 @@ const Product = ({product}) => {
           </CardContent>
           <div className="d-flex justify-content-center">
             <Link to={`/details/${_id}`}>
-              <button className="btn service-btn m-2">
-                 More Details
-              </button>
+              <Button variant="outlined" size="medium">
+                Buy Now
+              </Button>
             </Link>
           </div>
         </CardActionArea>

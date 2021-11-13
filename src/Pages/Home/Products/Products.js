@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navigation from "../../Shared/Navigation/Navigation";
 import Product from "../Product/Product";
 
 const Products = () => {
@@ -12,7 +11,6 @@ const Products = () => {
 
   return (
     <div>
-      <Navigation></Navigation>
       <div className="container">
         <h2 className="mt-5">Our Products</h2>
         <div className="service-container row">
