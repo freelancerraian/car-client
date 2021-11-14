@@ -44,6 +44,7 @@ const Review = () => {
           window.alert("Review SuccessFull ");
         }
       });
+      document.getElementById("From").reset();
 
     e.preventDefault();
   };
@@ -62,6 +63,7 @@ const Review = () => {
                 My Review
               </Typography>
               <form
+                id="From"
                 className="mt-4"
                 sx={{ textAlign: "center" }}
                 onSubmit={handleBookingSubmit}
@@ -114,7 +116,7 @@ const Review = () => {
                   }
                 />
                 <br />
-                <button type="submit" className="btn-Car">
+                <button type="submit" className="btn btn-primary mt-3">
                   Submit
                 </button>
               </form>

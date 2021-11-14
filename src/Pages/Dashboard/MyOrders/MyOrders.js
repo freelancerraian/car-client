@@ -21,11 +21,11 @@ const MyOrders = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setUserOrders(data));
+      .then((data) => setUserOrders(data))
   }, [user.email, token]);
 
   const handleDeleteUserService = (id) => {
-    const proceed = window.confirm("Are you sure, you want to delete?", id);
+    const proceed = window.confirm("Are you sure, you want to Cancel Order?", id);
     if (proceed) {
       const url = `https://lit-mesa-58869.herokuapp.com/orders/${id}`;
       fetch(url, {
@@ -34,7 +34,7 @@ const MyOrders = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("deleted successfully");
+            alert("Order Cancel successfully");
             const remainingUsers = userOrders.filter(
               (userService) => userService._id !== id
             );
@@ -72,20 +72,20 @@ const MyOrders = () => {
                 <TableCell align="canter">{row.email}</TableCell>
                 <TableCell align="canter">
                   {row.condition ? (
-                    <button className="btn-Car">
+                    <button className="btn btn-success">
                       <i class="fas fa-check"></i>
                       {row.condition}
                     </button>
                   ) : (
-                    <button className="btn-Car-outline"> pending.. </button>
+                    <button className="btn btn-warning"> pending.. </button>
                   )}
                 </TableCell>
                 <TableCell align="canter">
                   <button
                     onClick={() => handleDeleteUserService(row._id)}
-                    className="btn-Car"
+                    className="btn btn-danger"
                   >
-                    <i class="fas fa-times"></i>
+                    Cancel Order
                   </button>
                 </TableCell>
               </TableRow>

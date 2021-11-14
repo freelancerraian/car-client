@@ -68,7 +68,7 @@ function Dashboard(props) {
       >
         <Typography>
           <Link style={{ textDecoration: "none" }} to="/">
-            <Button variant="outlined" size="medium">
+            <Button style={{ margin: "3px" }} variant="outlined" size="medium">
               <HomeIcon color="secondary" />
               Home
             </Button>
@@ -85,19 +85,31 @@ function Dashboard(props) {
         >
           <Typography>
             <Link style={{ textDecoration: "none" }} to={`${url}/myorders`}>
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 My Orders
               </Button>
             </Link>
             <br />
             <Link style={{ textDecoration: "none" }} to={`${url}/review`}>
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 Review
               </Button>
             </Link>
             <br />
             <Link style={{ textDecoration: "none" }} to={`${url}/pay`}>
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 Payment
               </Button>
             </Link>
@@ -114,13 +126,21 @@ function Dashboard(props) {
         >
           <Typography>
             <Link style={{ textDecoration: "none" }} to={`${url}/makeAdmin`}>
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 Make Admin
               </Button>
             </Link>
             <br />
             <Link style={{ textDecoration: "none" }} to={`${url}/addproduct`}>
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 Add Product
               </Button>
             </Link>
@@ -129,7 +149,11 @@ function Dashboard(props) {
               style={{ textDecoration: "none" }}
               to={`${url}/manageproducts`}
             >
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 Manage Products
               </Button>
             </Link>
@@ -138,7 +162,11 @@ function Dashboard(props) {
               style={{ textDecoration: "none" }}
               to={`${url}/manageallorders`}
             >
-              <Button variant="outlined" size="medium">
+              <Button
+                style={{ margin: "3px" }}
+                variant="outlined"
+                size="medium"
+              >
                 <i class="fas fa-shopping-cart "></i>
                 Manage AllOrders
               </Button>
@@ -154,7 +182,13 @@ function Dashboard(props) {
           alignItems: "center",
         }}
       >
-        <Button onClick={logout} variant="outlined" size="medium">
+        <Button
+          style={{ margin: "3px" }}
+          onClick={logout}
+          variant="outlined"
+          size="medium"
+        >
+          <i class="fas fa-sign-out-alt"></i>
           Logout
         </Button>
       </Typography>

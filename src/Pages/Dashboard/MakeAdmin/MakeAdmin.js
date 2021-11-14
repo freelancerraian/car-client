@@ -32,19 +32,29 @@ const MakeAdmin = () => {
     };
 
     return (
-      <div>
-        <h1>Make An Admin</h1>
-        <form onSubmit={handleAdminSubmit}>
-          <TextField
-            onBlur={handleOnBlur}
-            type="email"
-            label="Email"
-            variant="standard"
-          />
-          <Button type="submit" variant="contained">
-            Make Admin
-          </Button>
-        </form>
+      <div className="container d-flex justify-content-center">
+        <div className="main Order m-5 p-3">
+          <h1>Make An Admin</h1>
+          <div className="">
+            <form onSubmit={handleAdminSubmit}>
+              <TextField
+                onBlur={handleOnBlur}
+                type="email"
+                label="Email"
+                variant="standard"
+                style={{ width: "100%" }}
+              />
+              <Button
+              className="mt-4"
+                type="submit"
+                variant="contained"
+                style={{ width: "100%" }}
+              >
+                Make Admin
+              </Button>
+            </form>
+          </div>
+        </div>
         {success && <Alert severity="success">Made Admin successfully!</Alert>}
       </div>
     );

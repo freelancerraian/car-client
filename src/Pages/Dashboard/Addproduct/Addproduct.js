@@ -21,103 +21,110 @@ const Addproduct = () => {
           <h1 className="service-text">Add a New Product</h1>
           <form onSubmit={handleSubmit(onSubmit)} className="add">
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("name", { required: true, maxLength: 20 })}
               placeholder="Name"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("img", { required: true })}
               placeholder="Img Link"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("make", { required: true })}
               placeholder="Make"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("model", { required: true })}
               placeholder="Model"
             />
             <textarea
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("description", { required: true })}
               placeholder="Description"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               type="number"
               {...register("price", { required: true })}
               placeholder="Price"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("color", { required: true })}
               placeholder="Color"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("year", { required: true })}
               placeholder="Year"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("driveType", { required: true })}
               placeholder="Drive Type"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("Transmission", { required: true })}
               placeholder="Transmission"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("condition", { required: true })}
               placeholder="Condition"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("mileage", { required: true })}
               placeholder="Mileage"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("fuelType", { required: true })}
               placeholder="FuelType"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("engineSize", { required: true })}
               placeholder="EngineSize"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("doors", { required: true })}
               placeholder="Doors"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("cylinder", { required: true })}
               placeholder="Cylinder"
             />
             <input
+              style={{ width: "100%" }}
               className="mt-3"
               {...register("vin", { required: true })}
               placeholder="Vin"
             />
-            <button type="submit" className="addbtn">
-              <nav className="btn-nav">
-                <ul className="btn-ul">
-                  <li className="btn-li">
-                    Submit
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </li>
-                </ul>
-              </nav>
+            <button type="submit" className="btn btn-info mt-3">
+              Submit
             </button>
           </form>
         </div>

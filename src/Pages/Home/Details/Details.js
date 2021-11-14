@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { useForm } from "react-hook-form";
 import { TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import useAuth from "../../../hooks/useAuth";
 import Navigation from "../../Shared/Navigation/Navigation";
+import Footer from "../../Shared/Footer/Footer";
+import './Details.css';
 
 const Details = () => {
-    const { register, handleSubmit, reset } = useForm();
+
   const { _id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -41,7 +42,7 @@ const Details = () => {
           window.alert("Order SuccessFull ");
         }
       });
-
+      document.getElementById("From").reset();
     e.preventDefault();
   };
   const { user } = useAuth();
@@ -76,26 +77,82 @@ const Details = () => {
                     alt=""
                   />
                 </div>
-                <h1>{ExactIteam[0]?.name}</h1>
-                <h4>Description</h4>
+                <h2>{ExactIteam[0]?.name}</h2>
                 <hr className="detail-hr mt-3 mb-3" />
-                <h5>{ExactIteam[0]?.description}</h5>
-                <h6>Price : {ExactIteam[0]?.price}</h6>
+                <p>
+                  <span className="fw-bold">Description : </span>
+                  {ExactIteam[0]?.description}
+                </p>
+                <div className="row">
+                  <div className="col-6">
+                    <p>
+                      <span className="fw-bold">Price :</span>{" "}
+                      {ExactIteam[0]?.price}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Model :</span>{" "}
+                      {ExactIteam[0]?.model}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Doors :</span>{" "}
+                      {ExactIteam[0]?.doors}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Made By :</span>{" "}
+                      {ExactIteam[0]?.make}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Transmission :</span>{" "}
+                      {ExactIteam[0]?.Transmission}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Cylinder :</span>{" "}
+                      {ExactIteam[0]?.cylinder}
+                    </p>
+                  </div>
+                  <div className="col-6">
+                    <p>
+                      <span className="fw-bold">Fuel Type :</span>{" "}
+                      {ExactIteam[0]?.fuelType}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Drive Type :</span>{" "}
+                      {ExactIteam[0]?.driveType}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Make :</span>{" "}
+                      {ExactIteam[0]?.year}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Engine Power :</span>{" "}
+                      {ExactIteam[0]?.engineSize}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Spreed :</span>{" "}
+                      {ExactIteam[0]?.mileage}
+                    </p>
+                    <p>
+                      <span className="fw-bold">Condition :</span>{" "}
+                      {ExactIteam[0]?.condition}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm12">
-            <div className="Order mb-4 ml-3 mt-5">
-              <Box sx={{}}>
+            <div className="Order mb-4 ml-3 mt-5 p-4">
+              <Box>
                 <Typography
                   id="transition-modal-title"
-                  variant="h6"
+                  variant="h4"
                   component="h2"
                   sx={{ textAlign: "center" }}
                 >
-                  Order
+                  Order Now
                 </Typography>
                 <form
+                  id="From"
                   sx={{ textAlign: "center" }}
                   onSubmit={handleBookingSubmit}
                 >
@@ -152,8 +209,7 @@ const Details = () => {
                     placeholder="Home Address"
                     size="small"
                   />
-
-                  <button type="submit" className="btn-Car">
+                  <button type="submit" className="btn btn-info">
                     Submit
                   </button>
                 </form>
@@ -162,6 +218,7 @@ const Details = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

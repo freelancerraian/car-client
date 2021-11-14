@@ -56,6 +56,7 @@ const ManageAllOrders = () => {
 
   return (
     <div className="container">
+      <h2>All Orders</h2>
       <TableContainer
         sx={{ maxHeight: 800, overflow: "scroll" }}
         component={Paper}
@@ -86,23 +87,23 @@ const ManageAllOrders = () => {
                   {!userOrder.condition ? (
                     <button
                       onClick={() => handleUpdateUser(userOrder._id)}
-                      className="btn-Car me-3"
+                      className="btn btn-danger me-3"
                     >
                       pending
                     </button>
                   ) : (
                     <button
                       onClick={() => handleUpdateUser(userOrder._id)}
-                      className="btn-Car-outline me-3"
+                      className="btn btn-success me-3"
                     >
                       shipped
                     </button>
                   )}
                   <button
                     onClick={() => handleDeleteUserService(userOrder._id)}
-                    className="btn-Car"
+                    className="btn btn-warning"
                   >
-                    <i class="fas fa-times"></i>
+                    Cancel
                   </button>
                 </TableCell>
               </TableRow>

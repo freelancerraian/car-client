@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import logo from '../../../images/logo.jpeg';
+import userimg from '../../../images/user.jpg';
 
 const Navigation = () => {
     const { user, logout } = useAuth();
@@ -32,16 +33,38 @@ const Navigation = () => {
               >
                 <ul className="navbar-nav m-auto mb-2 mb-lg-0">
                   <li className="nav-item cus-style">
-                    <NavLink className="nav-link" to="/">
+                    <NavLink className="nav-link fw-bold" to="/">
                       Home
                     </NavLink>
                   </li>
                   <li className="nav-item cus-style">
-                    <NavLink className="nav-link" to="/products">
+                    <NavLink className="nav-link fw-bold" to="/products">
                       Cars
                     </NavLink>
                   </li>
                 </ul>
+                <div className="user-info border rounded-pill d-flex p-2">
+                    <span>
+                      <h5>{user.displayName}</h5>
+                    </span>
+                    {user.photoURL ? (
+                      <span>
+                        <img
+                          className="user-img img-thumbnail"
+                          src={user.photoURL}
+                          alt=""
+                        />
+                      </span>
+                    ) : (
+                      <span>
+                        <img
+                          className="user-img img-thumbnail"
+                          src={userimg}
+                          alt=""
+                        />
+                      </span>
+                    )}
+                  </div>
                 <div>
                   {user?.email ? (
                     <Box>

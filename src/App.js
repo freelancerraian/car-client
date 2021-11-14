@@ -7,8 +7,9 @@ import Registar from './Pages/Login/Registar/Registar';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
-import Products from './Pages/Home/Products/Products';
 import Details from './Pages/Home/Details/Details';
+import Allcars from './Pages/Allcars/Allcars';
+import Notfound from './Pages/Notfound/Notfound';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
               <Login />
             </Route>
             <Route path="/products">
-              <Products />
+              <Allcars />
             </Route>
             <Route path="/registar">
               <Registar />
@@ -36,6 +37,9 @@ function App() {
             </PrivateRoute>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="*">
+              <Notfound></Notfound>
             </Route>
           </Switch>
         </Router>

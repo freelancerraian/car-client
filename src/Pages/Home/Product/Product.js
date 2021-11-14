@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Product = ({product}) => {
+  
   const {
     _id,
     name,
@@ -40,14 +41,23 @@ const Product = ({product}) => {
               {name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {description}
+              {description.slice(0, 200)}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <span className="fw-bold">Price :</span> {price} $
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <span className="fw-bold">Color : </span> {color}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <span className="fw-bold">Doors : </span> {doors}
             </Typography>
           </CardContent>
           <div className="d-flex justify-content-center">
-            <Link to={`/details/${_id}`}>
-              <Button variant="outlined" size="medium">
+            <Link style={{ textDecoration: "none" }} to={`/details/${_id}`}>
+              <button type="button" class="btn btn-success mb-3">
                 Buy Now
-              </Button>
+              </button>
             </Link>
           </div>
         </CardActionArea>

@@ -1,0 +1,7 @@
+.notfound {
+    background: url(../../images/404.jpg) no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    min-height: 1079px;
+}
