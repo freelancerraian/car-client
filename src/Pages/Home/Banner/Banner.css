@@ -1,0 +1,28 @@
+.home-sec {
+    background: #f8f5f5;
+    color: #000000;
+    height: 700px;
+}
+
+.home-row p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.home-row h1 {
+    font-weight: 600;
+    font-size: 43px;
+    line-height: 72px;
+}
+
+.home-row a {
+    color: #FFFFFF;
+    background: #E76F51;
+    text-decoration: none;
+    margin-top: 30px;
+}
+
+.modal-text {
+    color: #252B42;
+}

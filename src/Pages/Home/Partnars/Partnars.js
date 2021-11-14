@@ -12,7 +12,7 @@ const Partnars = () => {
       <div>
         <section className="partnars">
           <div className="part-head">
-            <h1>PARTNERS</h1>
+            <h2>PARTNERS</h2>
             <div className="spon-logo">
               <img src={img1} alt="sponsar" />
               <img src={img2} alt="sponsar" />

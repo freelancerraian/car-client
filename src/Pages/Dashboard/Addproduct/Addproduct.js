@@ -23,7 +23,7 @@ const Addproduct = () => {
             <input
               style={{ width: "100%" }}
               className="mt-3"
-              {...register("name", { required: true, maxLength: 20 })}
+              {...register("name", { required: true })}
               placeholder="Name"
             />
             <input
